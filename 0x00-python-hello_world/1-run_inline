@@ -1,6 +1,2 @@
 #!/bin/bash
-touch file.py
-echo "$PYCODE" > file.py
-export PYFILE=file.py
-python3 "$PYFILE"
-rm file.py
+python3 -c "$PYCODE"
