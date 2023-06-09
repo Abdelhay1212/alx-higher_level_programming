@@ -5,7 +5,7 @@ if __name__ == '__main__':
 
     length = len(argv)
     if length == 1:
-        print("0 arguaments.")
+        print("0 arguments.")
     else:
         if length == 2:
             print("1 argument:")
