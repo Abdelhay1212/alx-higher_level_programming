@@ -1,10 +1,9 @@
-#include <stdio.h>
 #include "lists.h"
 
-/*
+/**
  * check_cycle - checks if a linked list has a cycle
- * @list: pointer to head of a linked list
- * Return: an integer
+ * @list: linked list to check
+ * Return: integer
  */
 int check_cycle(listint_t *list)
 {
