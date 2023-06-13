@@ -1,9 +1,9 @@
 #include "lists.h"
 
-/*
- * is_palindrome - checks a linked list if it is a palindrome
- * @head: linked list to check if it is a palindrome
- * Retrun: integer
+/**
+ * is_palindrome - checks if a linked list is a palindrome
+ * @head: double pointer to the linked list
+ * Return: 1 if it is, 0 if not
  */
 int is_palindrome(listint_t **head)
 {
