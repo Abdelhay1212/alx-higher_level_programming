@@ -10,12 +10,9 @@ int is_palindrome(listint_t **head)
 {
 	int length = 0, i = 0;
 	listint_t *temp = malloc(sizeof(listint_t));
-	
+
 	if (head == NULL)
 		return (0);
-
-	if (*head == NULL)
-		return (1);
 
 	temp = *head;
 	while (temp != NULL)
