@@ -12,7 +12,7 @@ def roman_to_int(roman_string):
     }
 
     if not isinstance(roman_string, str) or len(roman_string) == 0:
-        return
+        return 0
     else:
         roman_int = 0
         for i in range(0, len(roman_string) - 1):
