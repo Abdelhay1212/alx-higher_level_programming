@@ -15,9 +15,10 @@ def roman_to_int(roman_string):
         return
     else:
         roman_int = 0
-        for key in roman_string:
-            if roman_int < roman_num[key]:
-                roman_int = roman_num[key] - roman_int
+        for i in range(0, len(roman_string) - 1):
+            if roman_num[roman_string[i]] < roman_num[roman_string[i + 1]]:
+                roman_int -= roman_num[roman_string[i]]
             else:
-                roman_int += roman_num[key]
+                roman_int += roman_num[roman_string[i]]
+        roman_int += roman_num[roman_string[-1]]
         return roman_int
