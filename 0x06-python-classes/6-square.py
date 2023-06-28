@@ -11,7 +11,7 @@ class Square:
 
         Args:
             size (int): The size of the new square.
-            position (int, int): The position of the square.
+            position (int, int): The position of the new square.
         """
         self.size = size
         self.position = position
@@ -23,7 +23,6 @@ class Square:
 
     @size.setter
     def size(self, value):
-        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -32,13 +31,12 @@ class Square:
 
     @property
     def position(self):
-        """Get the position of the square."""
-        return (self.position)
+        """Get/set the current position of the square."""
+        return (self.__position)
 
     @position.setter
     def position(self, value):
-        """Set the position of the square."""
-        if(not isinstance(value, tuple) or
+        if (not isinstance(value, tuple) or
                 len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -50,13 +48,13 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
-        """prints the square in #."""
-        if (self.size == 0):
+        """Print the square with the # character."""
+        if self.__size == 0:
             print("")
             return
 
-        [print("") for i in range(self.__position[1])]
-        for i in range(self.__size):
-            [print(" ", end="") for i in range(self.__position[0])]
-            print("#" * self.__size, end="")
+        [print("") for i in range(0, self.__position[1])]
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
             print("")
