@@ -11,7 +11,7 @@ class Square:
 
         Args:
             size (int): The size of the new square.
-            position (tuple): The position of the square.
+            position (int, int): The position of the square.
         """
         self.size = size
         self.position = position
@@ -53,9 +53,10 @@ class Square:
         """prints the square in #."""
         if (self.size == 0):
             print("")
-        else:
-            [print("") for i in range(self.__position[1])]
-            for i in range(self.__size):
-                [print(" ", end="") for i in range(self.__position[0])]
-                print("#" * self.__size, end="")
-                print("")
+            return
+
+        [print("") for i in range(self.__position[1])]
+        for i in range(self.__size):
+            [print(" ", end="") for i in range(self.__position[0])]
+            print("#" * self.__size, end="")
+            print("")
