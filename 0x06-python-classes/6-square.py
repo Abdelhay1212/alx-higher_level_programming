@@ -11,6 +11,7 @@ class Square:
 
         Args:
             size (int): The size of the new square.
+            position (tuple): The position of the square.
         """
         self.size = size
         self.position = position
@@ -22,6 +23,7 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """Set the size of the square."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -48,6 +50,7 @@ class Square:
         return (self.__size * self.__size)
 
     def my_print(self):
+        """prints the square in #."""
         if (self.size == 0):
             print("")
         else:
