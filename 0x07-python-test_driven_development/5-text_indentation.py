@@ -20,7 +20,7 @@ def text_indentation(text):
 
     while c < len(text):
         if text[c] in ".?:":
-            print("\n")
+            print("{}\n".format(text[c]))
             c += 2
         else:
             print(text[c], end="")
