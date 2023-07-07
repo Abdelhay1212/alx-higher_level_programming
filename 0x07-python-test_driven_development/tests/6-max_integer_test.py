@@ -16,8 +16,8 @@ class TestMaxInteger(unittest.TestCase):
     def test_neg_pos(self):
         self.assertEqual(max_integer([-5, 8, -30, 16, 3, -40]), 16)
 
-    def test_at_beg(self):
-        self.assertEqual(max_integer([20, 15, 6]), 20)
+    def test_at_end(self):
+        self.assertEqual(max_integer([20, 15, 21]), 20)
 
     def test_one_element(self):
         self.assertEqual(max_integer([10]), 10)
