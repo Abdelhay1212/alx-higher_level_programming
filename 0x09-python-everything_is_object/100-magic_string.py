@@ -1,3 +1,4 @@
 #!/usr/bin/python3
 def magic_string():
-    return("BestSchool" * (i + 1))
+    magic_string.n = setattr(magic_string, 0) + 1
+    return ("BestSchool, " * (magic_string.n - 1) + "BestSchool")
