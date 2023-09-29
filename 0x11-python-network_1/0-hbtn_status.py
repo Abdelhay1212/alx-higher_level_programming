@@ -9,7 +9,7 @@ with urllib.request.urlopen(url) as response:
     utf8_content = content.decode('utf-8')
 
 
-print("""Body response:$
+print("""Body response:
 \t- type: {}
 \t- content: {}
 \t- utf8 content: {}""".format(type(content), content, utf8_content))
