@@ -10,6 +10,6 @@ with urllib.request.urlopen(url) as response:
 
 
 print("""Body response:$
-    - type: {}
-    - content: {}
-    - utf8 content: {}""".format(type(content), content, utf8_content))
+\t- type: {}
+\t- content: {}
+\t- utf8 content: {}""".format(type(content), content, utf8_content))
