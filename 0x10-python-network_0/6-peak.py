@@ -3,6 +3,8 @@
 
 
 def find_peak(list_of_integers):
+    """Finds a peak in list_of_integers"""
+
     l, r = 0, len(list_of_integers) - 1
     while l <= r:
         m = (l + r) // 2
