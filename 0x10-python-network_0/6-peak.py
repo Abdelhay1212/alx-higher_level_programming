@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 # function that finds a peak in a list of unsorted integers.
+
 def find_peak(list_of_integers):
-    if len(list_of_integers) == 0:
-        return None
-    for i in range(len(list_of_integers)):
-        if i > 0 and i < len(list_of_integers) - 1:
-            if list_of_integers[i - 1] < list_of_integers[i] > list_of_integers[i + 1]:
-                return list_of_integers[i]
+    l, r = 0, len(list_of_integers) - 1
+    while l <= r:
+        m = (l + r) // 2
+        if m > 0 and list_of_integers[m] < list_of_integers[m - 1]:
+            r = m - 1
+        elif m < len(list_of_integers) - 1 and list_of_integers[m] < list_of_integers[m + 1]:
+            l = m + 1
         else:
-            if i == 0 and list_of_integers[i] > list_of_integers[i + 1]:
-                return list_of_integers[i]
-            elif list_of_integers[i] > list_of_integers[i - 1]:
-                return list_of_integers[i]
-    return list_of_integers[0]
+            return list_of_integers[m]
+    return None
