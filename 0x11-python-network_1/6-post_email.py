@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""Python script that takes in a URL, sends a request to the URL
-    and displays the body of the response."""
+""" sends a POST request to the passed URL with the email as a parameter,
+    and finally displays the body of the response."""
 
 
 import sys
@@ -9,10 +9,6 @@ import requests
 
 if __name__ == "__main__":
     url = sys.argv[1]
-
-    r = requests.get(url)
-
-    if r.status_code >= 400:
-        print("Error code: {}".format(r.status_code))
-    else:
-        print(r.text)
+    data = {'email': sys.argv[2]}
+    r = requests.post(url, data)
+    print(r.headers.get('X-Request-Id'))
