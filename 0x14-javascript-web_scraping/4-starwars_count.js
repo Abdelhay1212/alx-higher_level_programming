@@ -7,22 +7,19 @@ const URL = process.argv[2];
 const target = 'https://swapi-api.alx-tools.com/api/people/18/';
 
 request.get(URL, (error, response, body) => {
-  if (error) {
-    console.error(error);
-  }
+  if (!error) {
+    const data = JSON.parse(body).results;
+    let counter = 0;
 
-  const data = JSON.parse(body).results;
-  let counter = 0;
+    for (let i = 0; i < data.length; i++) {
+      const characters = data[i].characters;
 
-  for (let i = 0; i < data.length; i++) {
-    const characters = data[i].characters;
-
-    for (const char of characters) {
-      if (char === target) {
-        counter++;
+      for (const char of characters) {
+        if (char === target) {
+          counter++;
+        }
       }
     }
+    console.log(counter);
   }
-
-  console.log(counter);
 });
