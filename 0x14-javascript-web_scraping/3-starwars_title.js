@@ -7,7 +7,7 @@ const request = require('request');
 ID = process.argv[2];
 URL = `https://swapi-api.alx-tools.com/api/films/${ID}`;
 
-request.get(URL, (body) => {
+request.get(URL, (_, _, body) => {
   const jsonObject = JSON.parse(body);
   console.log(jsonObject['title']);
 });
