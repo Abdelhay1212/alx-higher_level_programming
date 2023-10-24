@@ -10,6 +10,6 @@ request.get(URL, (error, response, body) => {
     console.error(error);
   }
 
-  data = JSON.parse(body).get('results');
+  data = JSON.parse(body).results;
   console.log(data[0]['characters'][0]);
 });
