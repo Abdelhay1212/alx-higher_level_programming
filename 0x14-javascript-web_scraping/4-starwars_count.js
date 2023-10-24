@@ -12,12 +12,15 @@ request.get(URL, (error, response, body) => {
   }
 
   const data = JSON.parse(body).results;
-  const characters = data[0]['characters'];
-  let counter = 0;
 
-  for (char of characters) {
-    if (char === target) {
-      counter++;
+  for (let i = 0; i < data.length; i++) {
+    const characters = data[i]['characters'];
+    let counter = 0;
+
+    for (char of characters) {
+      if (char === target) {
+        counter++;
+      }
     }
   }
 
