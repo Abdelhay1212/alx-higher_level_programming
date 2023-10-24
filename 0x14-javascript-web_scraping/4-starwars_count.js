@@ -17,7 +17,7 @@ request.get(URL, (error, response, body) => {
   for (let i = 0; i < data.length; i++) {
     const characters = data[i].characters;
 
-    for (let char of characters) {
+    for (const char of characters) {
       if (char === target) {
         counter++;
       }
