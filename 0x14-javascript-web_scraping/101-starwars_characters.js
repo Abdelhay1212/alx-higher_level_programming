@@ -6,17 +6,25 @@ const request = require('request');
 const ID = process.argv[2];
 const URL = `https://swapi-api.alx-tools.com/api/films/${ID}`;
 
-request.get(URL, (error, response, body) => {
-  if (!error) {
-    const characters = JSON.parse(body).characters;
+async function makeRequest(URL) {
+  return new Promise((resolve) => {
+    request.get(URL, (error, response, body) => {
+      if (!error) {
+        resolve(body);
+      }
+    });
+  });
+}
 
-    for (const character of characters) {
-      request.get(character, (error, response, body) => {
-        if (!error) {
-          const name = JSON.parse(body).name;
-          console.log(name);
-        }
-      });
-    }
+async function getCharacters() {
+  const data = await makeRequest(URL);
+  const characters = JSON.parse(data).characters;
+
+  for (const character of characters) {
+    data = await makeRequest(character);
+    const name = JSON.parse(data).name;
+    console.log(name);
   }
-});
+}
+
+getCharacters();
