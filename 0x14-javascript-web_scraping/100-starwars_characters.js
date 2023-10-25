@@ -3,7 +3,8 @@
 
 const request = require('request');
 
-const URL = process.argv[2];
+const ID = process.argv[2];
+const URL = `https://swapi-api.alx-tools.com/api/films/${ID}`;
 
 request.get(URL, (error, response, body) => {
   if (!error) {
