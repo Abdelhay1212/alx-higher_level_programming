@@ -21,7 +21,7 @@ async function getCharacters() {
   const characters = JSON.parse(data).characters;
 
   for (const character of characters) {
-    data = await makeRequest(character);
+    const data = await makeRequest(character);
     const name = JSON.parse(data).name;
     console.log(name);
   }
