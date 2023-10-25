@@ -6,7 +6,7 @@ const request = require('request');
 const ID = process.argv[2];
 const URL = `https://swapi-api.alx-tools.com/api/films/${ID}`;
 
-async function makeRequest(URL) {
+async function makeRequest (URL) {
   return new Promise((resolve) => {
     request.get(URL, (error, response, body) => {
       if (!error) {
@@ -16,7 +16,7 @@ async function makeRequest(URL) {
   });
 }
 
-async function getCharacters() {
+async function getCharacters () {
   const data = await makeRequest(URL);
   const characters = JSON.parse(data).characters;
 
