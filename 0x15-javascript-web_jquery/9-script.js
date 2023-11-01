@@ -1,4 +1,4 @@
-/* Say Hello! */
+/* Say Hello */
 
 $(document).ready(function () {
     const URL = "https://hellosalut.stefanbohacek.dev/?lang=fr"
