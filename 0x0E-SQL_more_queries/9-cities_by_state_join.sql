@@ -1,3 +1,3 @@
 -- script that lists all cities contained in the database hbtn_0d_usa.
 USE hbtn_0d_usa;
-SELECT id, name FROM cities NATURAL JOIN states ORDER BY cities.id ASC;
+SELECT id, name FROM cities NATURAL JOIN states ORDER BY id ASC;
