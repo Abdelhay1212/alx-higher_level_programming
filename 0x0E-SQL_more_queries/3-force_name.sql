@@ -1,5 +1,5 @@
 -- script that creates the table force_name on your MySQL server.
-USE hbtn_0d_2;
+USE $4;
 
 CREATE TABLE IF NOT EXISTS force_name (
     id INT NOT NULL AUTO_INCREMENT,
